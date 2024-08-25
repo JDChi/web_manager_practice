@@ -1,11 +1,12 @@
-import Error404 from '@/views/404'
-import Login from '@/views/login'
-import { createBrowserRouter, Navigate } from 'react-router-dom'
+import Error404 from '@/views/404';
+import Login from '@/views/login';
+import Welcome from '@/views/welcome';
+import { createBrowserRouter, Navigate } from 'react-router-dom';
 
 const router = [
     {
         path: '/',
-        element: <div>Welcomeddd</div>
+        element: <Welcome />
     },
     {
         path: '/login',
@@ -13,12 +14,12 @@ const router = [
     },
     {
         path: '*',
-        element: <Navigate to='404' />
+        element: <Navigate to='/404' />
     },
     {
         path: '/404',
         element: <Error404 />
     }
-]
+];
 
-export default createBrowserRouter(router)
+export default createBrowserRouter(router);
