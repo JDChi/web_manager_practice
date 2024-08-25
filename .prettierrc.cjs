@@ -3,10 +3,10 @@ module.exports = {
     printWidth: 80,
     useTabs: false,
     tabWidth: 4,
-    semi: false, // 不用分号
+    semi: true, // 不用分号
     singleQuote: true,
     jsxSingleQuote: true,
-    arrowParens: "avoid",
+    arrowParens: 'avoid',
     backetSpacing: true,
-    trailingComma: "none",
-}
+    trailingComma: 'none'
+};
