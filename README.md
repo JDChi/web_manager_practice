@@ -15,3 +15,10 @@
   - types 公共 ts 定义
   - utils 工具函数
   - views 业务页面
+
+## 配置
+
+- tsconfig 应在 tsconfig.app.json 下配置才有效
+- vite.config.ts 用于配置 vite
+- .vscode 下的 settings.json 用于配置 vscode
+- .prettierrc.cjs 用于配置 prettierrc
