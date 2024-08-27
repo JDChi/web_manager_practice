@@ -1,7 +1,7 @@
 import Error404 from '@/views/404';
 import Login from '@/views/login';
 import Welcome from '@/views/welcome';
-import { createBrowserRouter, Navigate } from 'react-router-dom';
+import { Navigate, useRoutes } from 'react-router-dom';
 
 const router = [
     {
@@ -22,4 +22,8 @@ const router = [
     }
 ];
 
-export default createBrowserRouter(router);
+// export default createBrowserRouter(router);
+
+export default function Router() {
+    return useRoutes(router);
+}
