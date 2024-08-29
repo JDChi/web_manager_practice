@@ -17,6 +17,7 @@ export const hideLoading = () => {
         return;
     }
 
+    count--;
     if (count === 0) {
         document.body.removeChild(
             document.getElementById('loading') as HTMLDivElement
