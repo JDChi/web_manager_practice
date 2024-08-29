@@ -2,8 +2,9 @@ import { message } from 'antd';
 import axios from 'axios';
 import { hideLoading, showLoading } from './loading';
 
+console.log(import.meta.env);
 const instance = axios.create({
-    baseURL: 'https://3cbd5ff2-323e-42ad-85ff-610e3371764a.mock.pstmn.io',
+    baseURL: import.meta.env.VITE_BASE_API,
     timeout: 8000
 });
 
