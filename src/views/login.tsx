@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 export default function Login() {
     useEffect(() => {
         request
-            .get('/get_user_info', {
+            .get('/userinfo', {
                 user_id: 1
             })
             .then(res => {

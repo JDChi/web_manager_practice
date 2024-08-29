@@ -3,16 +3,16 @@ import axios from 'axios';
 import { hideLoading, showLoading } from './loading';
 
 const instance = axios.create({
-    baseURL: '/api',
+    baseURL: 'https://3cbd5ff2-323e-42ad-85ff-610e3371764a.mock.pstmn.io',
     timeout: 8000
 });
 
 export default {
-    get(url: string, params: any) {
+    get<T>(url: string, params?: any): Promise<T> {
         return instance.get(url, { params });
     },
 
-    post(url: string, params: any) {
+    post<T>(url: string, params?: any): Promise<T> {
         return instance.post(url, params);
     }
 };
