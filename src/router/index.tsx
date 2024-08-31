@@ -5,7 +5,7 @@ import { Navigate, useRoutes } from 'react-router-dom';
 
 const router = [
     {
-        path: '/',
+        path: '/welcome',
         element: <Welcome />
     },
     {

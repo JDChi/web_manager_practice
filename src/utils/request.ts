@@ -1,3 +1,4 @@
+import { Result } from '@/types/api';
 import { message } from 'antd';
 import axios from 'axios';
 import { hideLoading, showLoading } from './loading';
@@ -37,7 +38,7 @@ instance.interceptors.request.use(
 // 响应拦截器
 instance.interceptors.response.use(
     response => {
-        const data = response.data;
+        const data: Result = response.data;
         hideLoading();
         if (data.code === 500001) {
             message.error(data.msg);

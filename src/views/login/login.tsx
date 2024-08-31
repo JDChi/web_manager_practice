@@ -1,21 +1,26 @@
-import { Button, Form, FormProps, Input } from 'antd';
+import api from '@/api';
+import { LoginNS } from '@/types/api';
+import storage from '@/utils/storage';
+import { Button, Form, Input, message } from 'antd';
 import style from './index.module.less';
 
 export default function Login() {
-    type FieldType = {
-        username?: string;
-        password?: string;
-        remember?: string;
+    const onFinish = async (value: LoginNS.params) => {
+        const data = await api.login(value);
+
+        storage.set('token', data);
+        message.success('登录成功');
+        console.log('data', data);
+
+        // 做一个登录后的跳转
+        const params = new URLSearchParams(location.search);
+        location.href = params.get('callback') || '/welcome';
     };
 
-    const onFinish: FormProps<FieldType>['onFinish'] = values => {
-        console.log('Success:', values);
-    };
-
-    const onFinishFailed: FormProps<FieldType>['onFinishFailed'] =
-        errorInfo => {
-            console.log('Failed:', errorInfo);
-        };
+    // const onFinishFailed: FormProps<FieldType>['onFinishFailed'] =
+    //     errorInfo => {
+    //         console.log('Failed:', errorInfo);
+    //     };
     return (
         <div className={style.login}>
             <div className={style.loginWrapper}>
@@ -24,10 +29,10 @@ export default function Login() {
                     name='basic'
                     initialValues={{ remember: true }}
                     onFinish={onFinish}
-                    onFinishFailed={onFinishFailed}
+                    // onFinishFailed={onFinishFailed}
                     autoComplete='off'
                 >
-                    <Form.Item<FieldType>
+                    <Form.Item
                         name='username'
                         rules={[
                             {
@@ -39,7 +44,7 @@ export default function Login() {
                         <Input />
                     </Form.Item>
 
-                    <Form.Item<FieldType>
+                    <Form.Item
                         name='password'
                         rules={[
                             {
@@ -51,7 +56,7 @@ export default function Login() {
                         <Input.Password />
                     </Form.Item>
 
-                    <Form.Item<FieldType>
+                    <Form.Item
                         name='remember'
                         valuePropName='checked'
                         wrapperCol={{ offset: 8, span: 16 }}
