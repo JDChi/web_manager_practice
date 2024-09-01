@@ -2,6 +2,7 @@ import MyLayout from '@/layout';
 import Error404 from '@/views/404';
 import Dashboard from '@/views/dashboard';
 import Login from '@/views/login/index';
+import UserList from '@/views/system/user';
 import Welcome from '@/views/welcome/index';
 import { Navigate, useRoutes } from 'react-router-dom';
 
@@ -10,7 +11,6 @@ const router = [
         path: '/',
         element: <Navigate to={'/welcome'} />
     },
-
     {
         element: <MyLayout />,
         children: [
@@ -21,6 +21,10 @@ const router = [
             {
                 path: '/dashboard',
                 element: <Dashboard />
+            },
+            {
+                path: '/userlist',
+                element: <UserList />
             }
         ]
     },
