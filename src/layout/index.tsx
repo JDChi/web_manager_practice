@@ -1,3 +1,4 @@
+import NavHeader from '@/components/NavHeader';
 import { Layout, theme, Watermark } from 'antd';
 import React from 'react';
 
@@ -27,7 +28,7 @@ const App: React.FC = () => {
                     <Header
                         style={{ padding: 0, background: colorBgContainer }}
                     >
-                        顶部区域
+                        <NavHeader />
                     </Header>
                     <Content style={{ margin: '24px 16px 0' }}>
                         <div
