@@ -40,6 +40,7 @@ instance.interceptors.response.use(
     response => {
         const data: Result = response.data;
         hideLoading();
+				// 判断下 code，500001 代表 token 失效
         if (data.code === 500001) {
             message.error(data.msg);
             location.href = '/login';
