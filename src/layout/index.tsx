@@ -1,4 +1,5 @@
-import NavHeader from '@/components/NavHeader';
+import SideMenu from '@/components/menu';
+import NavHeader from '@/components/nav_header';
 import { Layout, theme, Watermark } from 'antd';
 import React from 'react';
 
@@ -22,7 +23,7 @@ const App: React.FC = () => {
                         console.log(collapsed, type);
                     }}
                 >
-                    侧边栏
+                    <SideMenu />
                 </Sider>
                 <Layout>
                     <Header
