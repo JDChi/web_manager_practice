@@ -1,7 +1,7 @@
 import MyLayout from '@/layout';
 import Error404 from '@/views/404';
-import Login from '@/views/login/login';
-import Welcome from '@/views/welcome';
+import Login from '@/views/login/index';
+import Welcome from '@/views/welcome/index';
 import { Navigate, useRoutes } from 'react-router-dom';
 
 const router = [
