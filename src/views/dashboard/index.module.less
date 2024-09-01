@@ -1,0 +1,51 @@
+.dashboardWrapper {
+    background-color: white;
+    padding: 20px;
+}
+
+.userInfo {
+}
+
+.report {
+    display: flex;
+
+    .card {
+        flex: 1;
+        height: 100px;
+        padding: 10px;
+        margin-right: 20px;
+        border-radius: 5px;
+        color: white;
+        font-size: 14px;
+        display: flex;
+        flex-direction: column;
+        &:nth-child(1) {
+            background-color: orange;
+        }
+        &:nth-child(2) {
+            background-color: gold;
+        }
+        &:nth-child(3) {
+            background-color: darkcyan;
+        }
+        &:nth-child(4) {
+            background-color: pink;
+        }
+        &:last-child {
+            margin-right: 0px;
+        }
+        &:first-child {
+            margin-left: 0px;
+        }
+
+        .title {
+        }
+        .data {
+            align-self: center; /* 水平居中 */
+            font-size: 24px; /* 可选：调整字体大小 */
+            flex-grow: 1; /* 让 .data 占据剩余空间，实现垂直居中 */
+            display: flex;
+            align-items: center; /* 垂直居中 .data 内的内容 */
+        }
+    }
+}
