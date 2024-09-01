@@ -1,7 +1,10 @@
 import {
+    AppstoreOutlined,
     DesktopOutlined,
+    MenuOutlined,
     SettingOutlined,
-    TeamOutlined
+    TeamOutlined,
+    UserOutlined
 } from '@ant-design/icons';
 import { Menu } from 'antd';
 import { ItemType, MenuItemType } from 'antd/es/menu/interface';
@@ -23,6 +26,38 @@ const SideMenu = () => {
                 {
                     label: '用户管理',
                     key: '2-1',
+                    icon: <TeamOutlined />
+                },
+                {
+                    label: '菜单管理',
+                    key: '2-2',
+                    icon: <MenuOutlined />
+                },
+                {
+                    label: '角色管理',
+                    key: '2-3',
+                    icon: <UserOutlined />
+                }
+            ]
+        },
+        {
+            label: '订单管理',
+            key: '3',
+            icon: <AppstoreOutlined />,
+            children: [
+                {
+                    label: '用户管理',
+                    key: '3-1',
+                    icon: <TeamOutlined />
+                },
+                {
+                    label: '菜单管理',
+                    key: '3-2',
+                    icon: <TeamOutlined />
+                },
+                {
+                    label: '角色管理',
+                    key: '3-3',
                     icon: <TeamOutlined />
                 }
             ]
