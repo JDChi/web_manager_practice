@@ -1,6 +1,8 @@
+import { ICreateUserModel } from '@/types/modal';
 import { Button, Form, Input, Select, Space, Table } from 'antd';
 import FormItem from 'antd/es/form/FormItem';
-import CreateUser from './create_user';
+import { useRef } from 'react';
+import CreateUserModal from './create_user';
 
 export default function UserList() {
     const dataSource = [
@@ -51,6 +53,17 @@ export default function UserList() {
         }
     ];
 
+    const modalRef = useRef<ICreateUserModel>(null);
+
+    // 点击新增
+    const onClickCreateUser = () => {
+        // 展示弹窗
+        if (modalRef.current) {
+            console.log('dddddddddddd');
+            modalRef.current.display('create', 'hllooskdj');
+        }
+    };
+
     return (
         <div className='userList'>
             <Form className='search-form' layout='inline'>
@@ -73,13 +86,15 @@ export default function UserList() {
                 <div className='header-wrapper'>
                     <div className='title'>用户列表</div>
                     <div className='action'>
-                        <Button type='primary'>新增</Button>
+                        <Button type='primary' onClick={onClickCreateUser}>
+                            新增
+                        </Button>
                         <Button type='primary' danger>
                             批量删除
                         </Button>
                     </div>
                 </div>
-                <CreateUser />
+                <CreateUserModal ref={modalRef} />
                 <Table dataSource={dataSource} columns={columns}></Table>
             </div>
         </div>
